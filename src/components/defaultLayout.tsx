@@ -19,6 +19,7 @@ export default function DefaultLayout({ children }: DefaultLayoutProps) {
       align="center"
       direction="column"
       style={{ minHeight: "100vh", minWidth: "100vw" }}
+      color="#fff"
       background="linear-gradient(120deg, #000 0%, #120E09 20%, #120E09 70%, #000 100%)"
     >
       {isLoadingAuth || (isLoadingSubscription && isUserLoggedIn) ? (
