@@ -2,6 +2,7 @@ import { Card, Heading, Flex } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { primaryColor } from "../types/colors";
+import { useEffect, useState } from "react";
 
 export default function ActionCard({
   title,
@@ -14,7 +15,12 @@ export default function ActionCard({
   backgroundImage: string;
   onClickDestiny: string;
 }) {
-  const isMobile = window.innerWidth < 768;
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  useEffect(() => {
+    setScreenWidth(window.innerWidth);
+  }, [screenWidth]);
+
+  const isMobile = screenWidth < 768;
   const iconSize = isMobile ? 50 : 62;
 
   return (

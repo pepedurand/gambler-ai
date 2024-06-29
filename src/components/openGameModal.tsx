@@ -1,4 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
+"use client";
 import {
   Flex,
   Modal,
@@ -11,6 +12,7 @@ import {
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import ModalButtonGroup from "./modalButtonGroup";
+import Router from "next/router";
 
 export default function OpenGameModal({ gameName }: { gameName: string }) {
   const [isOpen, setIsOpen] = useState(true);
@@ -71,7 +73,7 @@ export default function OpenGameModal({ gameName }: { gameName: string }) {
       dateSaved,
     };
     localStorage.setItem(jsonKey, JSON.stringify(item));
-    window.location.reload();
+    Router.reload();
   }
 
   return (

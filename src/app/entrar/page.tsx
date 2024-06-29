@@ -1,10 +1,10 @@
 "use client";
 import { Flex, Image } from "@chakra-ui/react";
-import { LoginForm } from "./components/loginForm";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { useAuth } from "@/src/context/authContext";
 import { primaryColor } from "@/src/types/colors";
+import { LoginForm } from "@/src/components/loginForm";
 
 export default function Login() {
   const { isUserLoggedIn } = useAuth();
